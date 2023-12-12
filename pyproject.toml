@@ -1,0 +1,54 @@
+[tool.poetry]
+name = "poetry-precommit"
+version = "0.1.0"
+description = ""
+authors = ["Author Name <author.name@gmail.com>"]
+readme = "README.md"
+packages = [{include = "poetry_precommit"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pre-commit = "3.6.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+# [build-system]
+# requires = ["hatchling"]
+# build-backend = "hatchling.build"
+
+[project]
+name = "aoc2023"
+version = "2023.0.1"
+dependencies = [
+]
+requires-python = ">=3.10"
+authors = [
+  {name = "Fredrik Sköld", email = "fredrik.skold@gmail.com"}
+]
+maintainers = [
+  {name = "Fredrik Sköld", email = "fredrik.skold@gmail.com"}
+]
+
+
+[tool.black]
+line-length = 120
+py310 = true
+target-version = ['py310']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+py_version = 310
+
+[flake8]
+# ignore = E203, E266, E501, W503, F403, F401
+# extend-ignore = E203, E501
+max-line-length = 120
+max-complexity = 18
+# select = B,C,E,F,W,T4,B9
+
+# https://dev.to/m1yag1/how-to-setup-your-project-with-pre-commit-black-and-flake8-183k
+# https://www.sefidian.com/2021/08/03/how-to-use-black-flake8-and-isort-to-format-python-codes/
