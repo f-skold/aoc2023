@@ -41,6 +41,15 @@ def rotate_clockwise(grid):
 
 
 def matrix_print(grid):
-    for i, row in enumerate(grid):
-        string = "".join(row)
-        print(f"{string} : {i}")
+    if isinstance(grid[0], str):
+        for i, row in enumerate(grid):
+            print(f"{row} : {i}")
+    elif isinstance(grid[0], list):
+        if isinstance(grid[0][0], str):
+            for i, row in enumerate(grid):
+                string = "".join(row)
+                print(f"{string} : {i}")
+        else:
+            for i, row in enumerate(grid):
+                string = "".join(map(str, row))
+                print(f"{string} : {i}")
