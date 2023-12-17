@@ -21,3 +21,15 @@ MOVEMENT = {
 
 def add(c1: Coord, c2: Coord) -> Coord:
     return Coord(c1.x + c2.x, c1.y + c2.y)
+
+
+def sub(c1: Coord, c2: Coord) -> Coord:
+    return Coord(c1.x - c2.x, c1.y - c2.y)
+
+
+def mult_scalar(scale: int, c1: Coord) -> Coord:
+    return Coord(scale * c1.x, scale * c1.y)
+
+
+def coord_abs(coord: Coord) -> int:
+    return abs(coord.x) + abs(coord.y)
