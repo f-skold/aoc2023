@@ -33,3 +33,11 @@ def mult_scalar(scale: int, c1: Coord) -> Coord:
 
 def coord_abs(coord: Coord) -> int:
     return abs(coord.x) + abs(coord.y)
+
+
+def coord_max(c1: Coord, c2: Coord) -> Coord:
+    return Coord(max(c1.x, c2.x), max(c1.y, c2.y))
+
+
+def coord_min(c1: Coord, c2: Coord) -> Coord:
+    return Coord(min(c1.x, c2.x), min(c1.y, c2.y))
