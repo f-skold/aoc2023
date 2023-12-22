@@ -10,6 +10,8 @@ class Direction(Enum):
 
 
 Coord = collections.namedtuple("Coord", ["x", "y"])
+Coord2 = collections.namedtuple("Coord2", ["x", "y"])
+Coord3 = collections.namedtuple("Coord3", ["x", "y", "z"])
 
 MOVEMENT = {
     Direction.NORTH: Coord(0, -1),
@@ -41,3 +43,25 @@ def coord_max(c1: Coord, c2: Coord) -> Coord:
 
 def coord_min(c1: Coord, c2: Coord) -> Coord:
     return Coord(min(c1.x, c2.x), min(c1.y, c2.y))
+
+
+# Add add 3D coords below
+
+
+def add3(c1: Coord3, c2: Coord3) -> Coord3:
+    return Coord3(c1.x + c2.x, c1.y + c2.y, c1.z + c2.z)
+
+
+def sub3(c1: Coord3, c2: Coord3) -> Coord3:
+    return Coord3(c1.x - c2.x, c1.y - c2.y, c1.z - c2.z)
+
+
+def copy3(c1: Coord3) -> Coord3:
+    return Coord3(c1.x, c1.y, c1.z)
+
+
+def sign3(c1: Coord3) -> Coord3:
+    sx = min(1, max(-1, c1.x))
+    sy = min(1, max(-1, c1.y))
+    sz = min(1, max(-1, c1.z))
+    return Coord3(sx, sy, sz)
