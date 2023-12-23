@@ -45,6 +45,10 @@ def coord_min(c1: Coord, c2: Coord) -> Coord:
     return Coord(min(c1.x, c2.x), min(c1.y, c2.y))
 
 
+def add2(c1: Coord2, c2: Coord2) -> Coord2:
+    return Coord(c1.x + c2.x, c1.y + c2.y)
+
+
 # Add add 3D coords below
 
 
